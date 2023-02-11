@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function getComputerChoice() { // Get random result of Rock, Paper or Scissors
+            const rockPaperScissors = ["Rock", "Paper", "Scissors"];
+            return rockPaperScissors[Math.floor(Math.random()* rockPaperScissors.length)];
+        }
+
+        function playRockPaperScissors(playerSelection, computerSelection) { //Play 1 round of the game returning a string of the result.
+            if(playerSelection === "Rock" && computerSelection === "Scissors"){
+                result = "You win! " + playerSelection + " beats " + computerSelection;
+            }
+            else if(playerSelection === "Rock" && computerSelection === "Paper"){
+                result = "You lose " + computerSelection + " beats " + playerSelection;
+            }
+
+            
+            //result = "You win! " + playerSelection + " beats " + computerSelection;
+
+            //result = "You lose " + computerSelection + " beats " + playerSelection;
+
+            return result;
+
+        }
+
+        getComputerChoice();
+        console.log(getComputerChoice());
+    </script>
+</body>
+</html>
