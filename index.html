@@ -18,16 +18,21 @@
             let playerCapitalised = playerSelection.toUpperCase();
             let computerCapitalised = computerSelection.toUpperCase();
             let result = "undecided";
+            console.log(playerCapitalised);
+            console.log(computerCapitalised);
             if(playerCapitalised === "ROCK"){
                 switch(computerCapitalised){
                     case "ROCK":
                         result = "draw";
+                        console.log(result);
                         break;
                     case "PAPER":
                         result = "loss";
+                        console.log(result);
                         break;
                     case "SCISSORS":
                         result = "win";
+                        console.log(result);
                         break;
                 }
             }
@@ -55,41 +60,66 @@
                     case "SCISSORS":
                         result = "draw";
                         break;                
-                }
+                }            
             }
+            return [result, playerSelection, computerSelection];
+        }
             
-            switch(result){
+       
+        function outputResultText(result) {
+            let output = "undecided";
+            
+            switch(result[0]){
                 case "undecided":
                     output = "Something went wrong, please try again.";
+                    
                     break;
                 case "draw":
-                    output = `It's a draw! You picked ${playerSelection} and the computer picked ${computerSelection}`;
+                    output = `It's a draw! You picked ${result[1]} and the computer picked ${result[2]}`;
                     break;
                 case "win":
-                    output = "You win! " + playerSelection + " beats " + computerSelection;
+                    output = "You win! " + result[1] + " beats " + result[2];
                     break;
                 case "loss": 
-                    output = "You lose " + computerSelection + " beats " + playerSelection;
+                    output = "You lose " + result[2] + " beats " + result[1];
                     break;
             }
             return output;
             }
-       
-        
-            function game() { //game of 5 rounds, counting the score
 
-                //for loop up to 5 games
-                //score for player and computer
-                //+1 for each victory
-                //return overall result
+        
+        
+       function game() { //game of 5 rounds, counting the score
+
+            //for loop up to 5 games
+            let userScore = 0;
+            let computerScore = 0;
+            for(let i = 0; i < 5; i++) { //iterate through 5 games
+                let result = playRockPaperScissors(prompt(), getComputerChoice()); //store array of result, playerchoice, computerchoice
+                console.log(outputResultText(result)); //show who won each round
+            
+                switch(result[0]) { //track the score
+                    case "win":
+                        userScore++;
+                        break;
+                    case "loss":
+                        computerScore++;
+                        break;
+                } 
                 
+                    
+            }
+            console.log(`Final Score is ${userScore} - ${computerScore}`); //Output final score
 
             }
 
-        const playerChoice = prompt();
+        /*const playerChoice = prompt();
         const computerChoice = getComputerChoice();
+        const test = playRockPaperScissors(playerChoice, computerChoice);
         console.log(playRockPaperScissors(playerChoice, computerChoice));
-
+        console.log(outputResultText(test));
+        */
+        game();    
     </script>
 </body>
 </html>
