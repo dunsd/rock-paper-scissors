@@ -18,21 +18,20 @@
             let playerCapitalised = playerSelection.toUpperCase();
             let computerCapitalised = computerSelection.toUpperCase();
             let result = "undecided";
-            console.log(playerCapitalised);
-            console.log(computerCapitalised);
+
+            //console.log(playerCapitalised);
+            //console.log(computerCapitalised);
+
             if(playerCapitalised === "ROCK"){
                 switch(computerCapitalised){
                     case "ROCK":
                         result = "draw";
-                        console.log(result);
                         break;
                     case "PAPER":
                         result = "loss";
-                        console.log(result);
                         break;
                     case "SCISSORS":
                         result = "win";
-                        console.log(result);
                         break;
                 }
             }
