@@ -16,26 +16,8 @@
 
         function playRockPaperScissors(playerSelection, computerSelection) { //Play 1 round of the game returning a string of the result.
             let playerCapitalised = playerSelection.toUpperCase();
-            console.log(playerCapitalised);
-            
             let computerCapitalised = computerSelection.toUpperCase();
-            console.log(computerCapitalised);
-            /*
-            if(playerSelection === "Rock" && computerSelection === "Scissors"){
-                result = "You win! " + playerSelection + " beats " + computerSelection;
-            }
-            else if(playerSelection === "Rock" && computerSelection === "Paper"){
-                result = "You lose " + computerSelection + " beats " + playerSelection;
-            }
-            */
-            
-            //result = "You win! " + playerSelection + " beats " + computerSelection;
-
-            //result = "You lose " + computerSelection + " beats " + playerSelection;
-
-            
             let result = "undecided";
-            
             if(playerCapitalised === "ROCK"){
                 switch(computerCapitalised){
                     case "ROCK":
@@ -90,16 +72,14 @@
                     output = "You lose " + computerSelection + " beats " + playerSelection;
                     break;
             }
-            console.log(output);
             return output;
             }
        
         
-            
-        getComputerChoice();
-        console.log(playRockPaperScissors("Rock", "Rock"));
+        const playerChoice = prompt();
+        const computerChoice = getComputerChoice();
+        console.log(playRockPaperScissors(playerChoice, computerChoice));
 
-        console.log(getComputerChoice());
     </script>
 </body>
 </html>
