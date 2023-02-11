@@ -49,13 +49,39 @@
                         break;
                 }
             }
+            else if(playerCapitalised === "PAPER") {
+                switch(computerCapitalised){
+                    case "ROCK":
+                        result = "win";
+                        break;
+                    case "PAPER":
+                        result = "draw";
+                        break;
+                    case "SCISSORS":
+                        result = "loss";
+                        break;                
+                }
+            }
+            else if(playerCapitalised === "SCISSORS") {
+                switch(computerCapitalised){
+                    case "ROCK":
+                        result = "loss";
+                        break;
+                    case "PAPER":
+                        result = "win";
+                        break;
+                    case "SCISSORS":
+                        result = "draw";
+                        break;                
+                }
+            }
             
             switch(result){
                 case "undecided":
                     output = "Something went wrong, please try again.";
                     break;
                 case "draw":
-                    output = "It's a draw! You picked ${playerSelection} and the computer picked ${computerSelection}";
+                    output = `It's a draw! You picked ${playerSelection} and the computer picked ${computerSelection}`;
                     break;
                 case "win":
                     output = "You win! " + playerSelection + " beats " + computerSelection;
@@ -71,7 +97,7 @@
         
             
         getComputerChoice();
-        console.log(playRockPaperScissors("Rock", "Scissors"));
+        console.log(playRockPaperScissors("Rock", "Rock"));
 
         console.log(getComputerChoice());
     </script>
