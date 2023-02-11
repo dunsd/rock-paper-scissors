@@ -106,11 +106,17 @@
                         computerScore++;
                         break;
                 } 
-                
-                    
             }
             console.log(`Final Score is ${userScore} - ${computerScore}`); //Output final score
-
+            if(userScore > computerScore) {
+                console.log(`Congratulations, you won!`)
+            }
+            else if(userScore < computerScore) {
+                console.log(`Unlucky, you lost.`)
+            }
+            else {
+                console.log(`It's a tie.`)
+            }
             }
 
         /*const playerChoice = prompt();
